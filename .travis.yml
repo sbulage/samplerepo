@@ -1,0 +1,13 @@
+language: python
+python:
+          - "2.6"
+          - "2.7"
+install:
+          - pip install pylint
+          - pip install pep8
+          - pip install --quite  coveralls
+script:
+          - pep8  *.py 
+          - pylint  *.py 
+after_success:
+          - coveralls
